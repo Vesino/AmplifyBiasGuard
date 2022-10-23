@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Storage } from 'aws-amplify';
 import DocumentsList from '../components/DocumentsList';
-import DocumentsPagination from '../components/DocumentsPagination';
 import DocumentsProTips from '../components/DocumentsProTips';
 import DocumentsTitle from '../components/DocumentsTitle';
 import Header from '../components/Header';
