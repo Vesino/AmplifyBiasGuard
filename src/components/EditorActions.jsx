@@ -5,7 +5,7 @@ const EditorActions = ({ handleSave }) => {
   return (
     <div className="flex flex-row justify-end w-full pt-6">
       <button
-        className="bg-transparent rounded-md outline outline-brandDark-100 text-base  text-brandDark-100 cursor-pointer py-2 px-4 mr-3"
+        className="bg-transparent rounded-md border border-brandDark-100 text-base text-brandDark-100 cursor-pointer py-2 px-4 mr-3"
         type="button"
         id="save-button"
         onClick={handleSave}

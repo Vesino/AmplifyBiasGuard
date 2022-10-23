@@ -7,13 +7,13 @@ import Editor from './pages/Editor.jsx';
 import './index.css';
 
 
-function App({ signOut, user }) {
+function App() {
   return (
     <div className="bg-brandDark-500 text-gray-200 text-xs">
       <Router>
         <Routes>
           <Route element={<Documents />} path="/" />
-          <Route element={<Editor />} path="/editor/:id" />
+          <Route element={<Editor />} path="/editor/:key" />
           <Route element={<Editor />} path="/editor/" />
         </Routes>
       </Router>

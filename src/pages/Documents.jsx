@@ -9,6 +9,7 @@ import Header from '../components/Header';
 
 const Documents = () => {
 
+  const [refresh, setRefresh] = useState(false);
   const [documentList, setDocumentList] = useState([]);
 
   useEffect(() => {
@@ -16,6 +17,17 @@ const Documents = () => {
     .then((result) => setDocumentList(result))
     .catch((err) => console.log(err));
   }, []);
+
+  useEffect(() => {
+    if (refresh) {
+      Storage.list('')
+      .then((result) => {
+        setDocumentList(result);
+        setRefresh(false);
+      })
+      .catch((err) => console.log(err));
+    }
+  }, [refresh]);
   
   return (
     <div className="flex flex-row h-screen px-14 py-12 overflow-hidden">
@@ -23,8 +35,10 @@ const Documents = () => {
         <div className="flex flex-col justify-start h-full">
           <Header />
           <DocumentsTitle />
-          <DocumentsList documentList={documentList} />
-          <DocumentsPagination />
+          <DocumentsList
+            documentList={documentList} 
+            setRefresh={setRefresh}
+          />
         </div>
       </div>
       <div className="basis-1/3">
