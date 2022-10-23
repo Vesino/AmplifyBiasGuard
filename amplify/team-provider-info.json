@@ -14,6 +14,10 @@
     "categories": {
       "auth": {
         "amplifybiasguard9aab57d5": {}
+      },
+      "function": {
+        "analizer": {},
+        "documents": {}
       }
     }
   }
