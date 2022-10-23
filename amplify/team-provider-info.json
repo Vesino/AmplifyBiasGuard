@@ -23,12 +23,15 @@
         },
         "documents": {
           "deploymentBucketName": "amplify-amplifybiasguard-dev-35827-deployment",
-          "s3Key": "amplify-builds/documents-55376b31303256527759-build.zip"
+          "s3Key": "amplify-builds/documents-39774a6768636861307a-build.zip"
         }
       },
       "api": {
         "analizer": {},
         "documents": {}
+      },
+      "storage": {
+        "s3amplifybiasguardstorage": {}
       }
     }
   }
