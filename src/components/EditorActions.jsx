@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const EditorActions = ({ handleSave }) => {
+const EditorActions = ({ handleSave, handleAnalyze }) => {
   return (
     <div className="flex flex-row justify-end w-full pt-6">
       <button
@@ -16,6 +16,7 @@ const EditorActions = ({ handleSave }) => {
         className="bg-brandGreen-500 rounded-md text-base text-brandDark-500 cursor-pointer py-2 px-4"
         type="button"
         id="analyze-button"
+        onClick={handleAnalyze}
       >
         Analizar
       </button>
