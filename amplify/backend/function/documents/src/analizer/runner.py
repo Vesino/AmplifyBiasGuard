@@ -21,13 +21,13 @@ class DocumentAnalyzer:
 
     def run(self):
         s3 = boto3.client("s3")
-        data = s3.get_object(Bucket="user-documents142632-dev", Key=self.key)
+        data = s3.get_object(Bucket="amplifybiasguard-storage35827-dev", Key=self.key)
         contents = data["Body"].read()
 
-        """classification_response = self.comprehend.classify_document(
+        classification_response = self.comprehend.classify_document(
             Text=contents,
             EndpointArn=os.environ['COMPREHEND_MODEL_ARN']
-        )"""
+        )
 
         classification_response = {
             "Classes": [],
