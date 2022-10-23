@@ -1,0 +1,12 @@
+{
+  "resourceName": "s3amplifybiasguardstorage",
+  "bucketName": "amplifybiasguard-storage",
+  "policyUUID": "c72a1f1a",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ]
+}

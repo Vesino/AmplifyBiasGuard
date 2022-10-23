@@ -68,5 +68,12 @@
         }
       ]
     }
+  },
+  "storage": {
+    "s3amplifybiasguardstorage": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": []
+    }
   }
 }

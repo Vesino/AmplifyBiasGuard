@@ -35,5 +35,11 @@ export type AmplifyDependentResourcesAttributes = {
             "ApiName": "string",
             "ApiId": "string"
         }
+    },
+    "storage": {
+        "s3amplifybiasguardstorage": {
+            "BucketName": "string",
+            "Region": "string"
+        }
     }
 }
