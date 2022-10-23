@@ -1,4 +1,6 @@
 import React from 'react';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 
 
 // const Warning = () => (
@@ -11,7 +13,20 @@ import React from 'react';
 
 const Success = () => (
   <div className="border-b-2 border-brandDark-200 pb-4">
-    <img className="w-16" src="/trophy.svg" alt="Trophy" />
+    <div className="flex flex-row justify-between items-center">
+      <img className="w-16" src="/trophy.svg" alt="Trophy" />
+      <div className="w-16 h-16">
+        <CircularProgressbar 
+          value={66} 
+          text={`${66}%`}
+          styles={buildStyles({
+            textColor: "#7ED957",
+            pathColor: "#7ED957",
+            trailColor: "B1E89A",
+          })}
+        />
+      </div>
+    </div>
     <p className="block text-lg text-brandGreen-300 font-bold pt-4">¡Buen trabajo!</p>
     <p className="block text-lg text-brandGreen-300 pt-1">Tu contenido no contiene sesgos de género.</p>
   </div>

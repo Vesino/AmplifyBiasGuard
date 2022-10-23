@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback, useState } from 'react';
-import { Auth } from 'aws-amplify';
+import { Storage } from 'aws-amplify';
 import { useParams } from 'react-router-dom';
 import EditorActions from '../components/EditorActions';
 import EditorContent from '../components/EditorContent';
@@ -11,6 +11,7 @@ import Header from '../components/Header';
 const Editor = () => {
 
   const [content, setContent] = useState("");
+  const [name, setName] = useState("");
 
   let { id } = useParams();
 
@@ -21,18 +22,21 @@ const Editor = () => {
   }, [id]);
 
   const handleSave = useCallback(async () => {
-    const user = await Auth.currentAuthenticatedUser();
-    const auth = await Auth.currentCredentials();
-    console.log(auth);
-    console.log(user);
-  }, []);
+    try {
+      await Storage.put(name, content, {
+        contentType: "text/plain",
+      });
+    } catch (error) {
+      console.log("Error uploading file: ", error);
+    }
+  }, [content, name]);
 
   return (
     <div className="flex flex-row h-screen px-14 py-12 overflow-hidden">
       <div className="basis-2/3 mr-6">
         <div className="flex flex-col justify-start h-full">
           <Header />
-          <EditorTitle />
+          <EditorTitle name={name} setName={setName} />
           <EditorContent content={content} setContent={setContent} />
           <EditorActions handleSave={handleSave} />
         </div>
